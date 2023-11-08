@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merging letter toggle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <label class="switch">
+      <input type="checkbox" class="input" />
+      <svg
+        class="letters"
+        viewBox="0 0 24 24"
+        width="24px"
+        height="24px"
+        aria-hidden="true"
+      >
+        <g stroke-linecap="round" stroke-width="4" transform="translate(0,4)">
+          <g class="letter">
+            <polyline class="letter-stroke" points="2 2,2 14" />
+            <polyline
+              class="letter-stroke"
+              points="2 2,16 2"
+              stroke-dasharray="14 16"
+              stroke-dashoffset="8"
+              transform="rotate(0,2,2)"
+            />
+            <polyline
+              class="letter-stroke"
+              points="2 8,6 8"
+              stroke-dasharray="4 6"
+            />
+          </g>
+          <g class="letter" transform="translate(14,0)">
+            <polyline class="letter-stroke" points="2 2,2 14" />
+            <polyline
+              class="letter-stroke"
+              points="2 2,8 2"
+              stroke-dasharray="6 8"
+            />
+            <polyline
+              class="letter-stroke"
+              points="2 8,6 8"
+              stroke-dasharray="4 6"
+            />
+          </g>
+        </g>
+      </svg>
+    </label>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body,
+input {
+  color: #1c1917;
+  transition: background-color 0.4s, color 0.4s;
+  font-size: 3.65rem;
+}
+
+body {
+  background-color: #e8e5e3;
+  display: flex;
+  height: 100vh;
+}
+
+.switch,
+.input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.input {
+  background-color: #bab1ab;
+  border-radius: 0.75em;
+  box-shadow: 0 0 0 0.125em #f2650d00;
+  outline: transparent;
+  position: relative;
+  width: 2.25em;
+  height: 1.5em;
+  transition: background-color 0.4s cubic-bezier(0.65, 0, 0.35, 1), box-shadow 0.15s cubic-bezier(0.65, 0, 0.35, 1), transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input:focus-visible {
+  box-shadow: 0 0 0 0.125em #f2650d;
+}
+
+.input:before {
+  background-color: #e8e5e3;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  transition: background-color 0.4s, transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  width: 1em;
+  height: 1em;
+}
+
+.letter,
+.letters {
+  transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.letters {
+  margin-left: 0.375em;
+  overflow: visible;
+  pointer-events: none;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.letter:last-child {
+  transform: translateX(14px);
+}
+
+.letter-stroke {
+  stroke: #bab1ab;
+  transition: stroke 0.4s cubic-bezier(0.65, 0, 0.35, 1), stroke-dashoffset 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6), transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.letter-stroke:nth-child(2) {
+  transform-origin: 2px 2px;
+}
+
+.input:checked {
+  background-color: #932e3e;
+}
+
+.input:checked,
+.input:checked+.letters {
+  transform: translateX(0.375em);
+}
+
+.input:checked:before {
+  transform: translateX(0.75em);
+}
+
+.input:checked~.letters .letter-stroke {
+  stroke: #932e3e;
+}
+
+.input:checked~.letters .letter-stroke:nth-child(2) {
+  stroke-dashoffset: 6;
+}
+
+.input:checked~.letters .letter-stroke:last-child {
+  stroke-dashoffset: 4;
+}
+
+.input:checked~.letters .letter:first-child .letter-stroke:nth-child(2) {
+  stroke-dashoffset: 0;
+  transform: rotate(56.5deg);
+}
+
+.input:checked~.letters .letter:last-child {
+  stroke-dashoffset: 0;
+  transform: translateX(8px);
+}
